@@ -1,8 +1,9 @@
-package webapp;
+package com.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,23 +18,12 @@ import javax.servlet.http.HttpServletResponse;
  * Web Server responds with Http Response
  */
 
-//Java Platform, Enterprise Edition (Java EE) JEE6
-
-//Servlet is a Java programming language class 
-//used to extend the capabilities of servers 
-//that host applications accessed by means of 
-//a request-response programming model.
-
-//1. extends javax.servlet.http.HttpServlet
-//2. @WebServlet(urlPatterns = "/login.do")
-//3. doGet(HttpServletRequest request, HttpServletResponse response)
-//4. How is the response created?
+//Servlet 是 Java 程式語言的 class，用來擴展 servers 的功能，host applications 藉由 request-response 程式存取
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
-
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<head>");
@@ -41,9 +31,10 @@ public class LoginServlet extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("My First Servlet");
+		out.println("<br>");
+		out.println("Hello~");
 		out.println("</body>");
 		out.println("</html>");
-
 	}
 
 }
