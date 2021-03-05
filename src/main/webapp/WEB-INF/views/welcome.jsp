@@ -7,6 +7,6 @@
 		<title>Success From JSP!!!</title>
 	</head>
 	<body>
-		My First JSP! My name is ${name} and password is ${password}
+		Welcome ${name} !
 	</body>
 </html>
