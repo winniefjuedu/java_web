@@ -4,9 +4,13 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Success From JSP!!!</title>
+		<title>Welcome ${name} !!!</title>
 	</head>
 	<body>
-		Welcome ${name} !
+		<h1>Welcome ${name} !</h1>		
+		<div>
+			Your Todos are 
+			${todos}
+		</div>
 	</body>
 </html>

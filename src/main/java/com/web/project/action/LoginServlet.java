@@ -1,4 +1,4 @@
-package com.web;
+package com.web.project.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import webapp.LoginService;
+import com.web.project.service.UserVaildationService;
+import com.web.project.service.todo.LoginTodoService;
 
 /*
  * Browser sends Http Request to Web Server
@@ -24,7 +25,8 @@ import webapp.LoginService;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
-	private LoginService service = new LoginService();
+	private UserVaildationService service = new UserVaildationService();
+	private LoginTodoService todoService = new LoginTodoService();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 
 		if (isValidUser) {
 			request.setAttribute("name", name);
+			request.setAttribute("todos", todoService.retrieveTodos());
 			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credentials!!");
