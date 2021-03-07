@@ -2,8 +2,8 @@ package com.web.project.model;
 
 import java.io.Serializable;
 
-public class LoginTodoVo {	
-	public LoginTodoVo(String name) {
+public class TodoVo {	
+	public TodoVo(String name) {
 		super();
 		this.name = name;
 	}

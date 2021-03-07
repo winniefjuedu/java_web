@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.web.project.service.UserVaildationService;
-import com.web.project.service.todo.LoginTodoService;
+import com.web.project.service.login.LoginService;
+import com.web.project.service.todo.TodoService;
 
 /*
  * Browser sends Http Request to Web Server
@@ -25,8 +25,10 @@ import com.web.project.service.todo.LoginTodoService;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
-	private UserVaildationService service = new UserVaildationService();
-	private LoginTodoService todoService = new LoginTodoService();
+	
+	private static final long serialVersionUID = 1L;
+	private LoginService service = new LoginService();
+	private TodoService todoService = new TodoService();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -43,9 +45,8 @@ public class LoginServlet extends HttpServlet {
 		boolean isValidUser = service.validateUser(name, password);
 
 		if (isValidUser) {
-			request.setAttribute("name", name);
-			request.setAttribute("todos", todoService.retrieveTodos());
-			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			response.sendRedirect("/todo.do");
+			//TodoServelt(todo.do)
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credentials!!");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);

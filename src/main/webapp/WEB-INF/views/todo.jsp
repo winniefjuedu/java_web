@@ -4,13 +4,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Welcome ${name} !!!</title>
+		<title>Welcome todo!!!</title>
 	</head>
-	<body>
-		<h1>Welcome ${name} !</h1>		
+	<body>	
 		<div>
-			Your Todo's are 
-			${todos}
+			<p>Your Todo's are: </p>
+			<p>${todos}</p>
 		</div>
 	</body>
 </html>
