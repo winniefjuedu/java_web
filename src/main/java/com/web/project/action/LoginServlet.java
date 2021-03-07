@@ -44,8 +44,8 @@ public class LoginServlet extends HttpServlet {
 		boolean isValidUser = service.validateUser(name, password);
 
 		if (isValidUser) {
-			response.sendRedirect("/todo.do");
-			//TodoServelt(todo.do)
+			request.getSession().setAttribute("name", name); //用getSession取得名字
+			response.sendRedirect("/todo.do"); //TodoServelt(todo.do)
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credentials!!");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
