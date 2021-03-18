@@ -13,7 +13,7 @@ import com.web.project.service.login.LoginService;
 import com.web.project.service.todo.TodoService;
 
 @WebServlet(urlPatterns = "/todo.do")
-public class TodoServlet extends HttpServlet {
+public class ListTodoServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	private TodoService todoService = new TodoService();

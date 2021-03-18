@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/web/project/action/AddTodoServlet.java=UTF-8
+encoding//src/main/java/com/web/project/action/DeleteTodoServlet.java=UTF-8
+encoding//src/main/java/com/web/project/action/ListTodoServlet.java=UTF-8
 encoding//src/main/java/com/web/project/action/LoginServlet.java=UTF-8
-encoding//src/main/java/com/web/project/action/TodoServlet.java=UTF-8
